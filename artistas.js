@@ -53,4 +53,4 @@ const sectoresHarry = [
 
 
 
-export {artistas}; export {fechasHarry}; export {sectoresHarry}; export {cantidad};
+export {artistas, fechasHarry, sectoresHarry, cantidad};
