@@ -23,6 +23,8 @@ artistas.forEach((artista) => {
 });
 
 
+let inconveniente = [];
+
 const form = document.getElementById('form')
 
 form.addEventListener('submit', (e) => {
@@ -33,13 +35,15 @@ form.addEventListener('submit', (e) => {
    const email = document.getElementById('email').value;
    const mensaje = document.getElementById('mensaje').value;
 
-   const inconveniente = {
-    nombre,
-    email,
-    mensaje
-   }
+   inconveniente.push({nombre, email, mensaje});
 
-   alert('¡Muchas gracias ' + nombre + ', tu mensaje ha sido enviado! Nos comunicaremos en un plazo de 72hs');
+  //  alert('¡Muchas gracias ' + nombre + ', tu mensaje ha sido enviado! Nos comunicaremos en un plazo de 72hs');
+
+   Swal.fire(
+    'Muchas gracias ' + nombre + ', tu mensaje ha sido enviado!',
+    'Nos comunicaremos con vos por E-mail en un plazo de 72hs',
+    'success'
+  )
 
    form.reset();
 

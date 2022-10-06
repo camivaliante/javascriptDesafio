@@ -1,4 +1,4 @@
-import { cantidad, fechasHarry, sectoresHarry } from "./artistas";
+import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
 
 // FECHA SELECT OPTION
   const fechasH = document.getElementById("fechaHarry");
@@ -75,16 +75,19 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas";
       Swal.fire({
         title: 'Inicia sesión',
         html: `<p>Una vez que inicies sesión, se te redirigirá al sector de pago</p>
-        <input type="text" id="name" class="swal2-input" placeholder="Nombre y apellido">
-        <input type="email" id="login" class="swal2-input" placeholder="E-mail">
-        <input type="password" id="password" class="swal2-input" placeholder="Contraseña">`,
+        <input type="text" id="name" class="form-control" placeholder="Nombre y apellido">
+        <br>
+        <input type="email" class="form-control" placeholder="E-mail" id="email"
+        required>
+        <br>
+        <input type="password" id="password" class="form-control" placeholder="Contraseña">`,
         confirmButtonText: 'Aceptar',
         showCancelButton: true,
         cancelButtonText: 'Cancelar',
         focusConfirm: true,
         preConfirm: () => {
           let nombre = Swal.getPopup().querySelector('#name').value
-          let login = Swal.getPopup().querySelector('#login').value
+          let login = Swal.getPopup().querySelector('#email').value
           let password = Swal.getPopup().querySelector('#password').value
           if (!login || !password || !nombre) {
             Swal.showValidationMessage(`Por favor ingrese TODOS los datos pedidos`)
