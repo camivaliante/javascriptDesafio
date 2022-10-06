@@ -45,9 +45,9 @@ form.addEventListener('submit', (e) => {
 
    const enJSON = JSON.stringify(inconveniente);
 
-   localStorage.setItem('miInconveniente', enJSON);
+   localStorage.setItem('inconveniente', enJSON);
 
-   const misInconvenientes = JSON.parse(localStorage.getItem('miInconveniente'));
+   const miInconveniente = JSON.parse(localStorage.getItem('inconveniente'));
 
 })
 
