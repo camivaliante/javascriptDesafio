@@ -25,4 +25,32 @@ const artistas = [
     }
   ];
 
-export {artistas};
+  const cantidad = [
+    {cant: 1},
+    {cant: 2},
+    {cant: 3},
+    {cant: 4},
+  ];
+
+// HARRY STYLES
+
+const fechasHarry = [
+  {dia: "3 de diciembre de 2022"},
+  {dia: "4 de diciembre de 2022"}
+]
+
+const sectoresHarry = [
+  { nombre: "CAMPO VIP", precio: 17500 },
+  { nombre: "PLATEA PREFERENCIAL", precio: 16500 },
+  { nombre: "PLATEA COMÚN", precio: 13500 },
+  { nombre: "PLATEA MEDIA SIVORI", precio: 12000 },
+  { nombre: "PLATEA ALTA", precio: 12000 },
+  { nombre: "CAMPO", precio: 10000 },
+  { nombre: "PLATEA ALTA SIVORI", precio: 7500 },
+];
+
+//  COLDPLAY
+
+
+
+export {artistas}; export {fechasHarry}; export {sectoresHarry}; export {cantidad};

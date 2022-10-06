@@ -1,9 +1,7 @@
+import { cantidad, fechasHarry, sectoresHarry } from "./artistas";
+
 // FECHA SELECT OPTION
-const fechasHarry = [
-    {dia: "3 de diciembre de 2022"},
-    {dia: "4 de diciembre de 2022"}
-]
-    const fechasH = document.getElementById("fechaHarry");
+  const fechasH = document.getElementById("fechaHarry");
 
   fechasHarry.forEach(fechaHarry => {
     const option = document.createElement("option");
@@ -15,16 +13,6 @@ const fechasHarry = [
   })
 
 // SECTOR SELECT OPTION
-const sectoresHarry = [
-    { nombre: "CAMPO VIP", precio: 17500 },
-    { nombre: "PLATEA PREFERENCIAL", precio: 16500 },
-    { nombre: "PLATEA COMÚN", precio: 13500 },
-    { nombre: "PLATEA MEDIA SIVORI", precio: 12000 },
-    { nombre: "PLATEA ALTA", precio: 12000 },
-    { nombre: "CAMPO", precio: 10000 },
-    { nombre: "PLATEA ALTA SIVORI", precio: 7500 },
-  ];
-
   const sectoresH = document.getElementById("sectoresH");
 
   sectoresHarry.forEach(sectorHarry => {
@@ -37,13 +25,6 @@ const sectoresHarry = [
   })
 
   // CANTIDAD SELECT OPTION
-  const cantidad = [
-    {cant: 1},
-    {cant: 2},
-    {cant: 3},
-    {cant: 4},
-  ];
-
   const cant = document.getElementById("cantidad");
 
   cantidad.forEach(cantidad => {
