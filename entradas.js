@@ -77,10 +77,10 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
         html: `<p>Una vez que inicies sesión, se te redirigirá al sector de pago</p>
         <input type="text" id="name" class="form-control" placeholder="Nombre y apellido">
         <br>
-        <input type="email" class="form-control" placeholder="E-mail" id="email"
-        required>
+        <input type="email" class="form-control" placeholder="E-mail" id="email">
         <br>
-        <input type="password" id="password" class="form-control" placeholder="Contraseña">`,
+        <input type="password" id="password" class="form-control" placeholder="Contraseña">
+        <p>Si no estás registrado hace click <a href="../registro.html"> ACÁ </a>`,
         confirmButtonText: 'Aceptar',
         showCancelButton: true,
         cancelButtonText: 'Cancelar',
