@@ -18,7 +18,7 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
   sectoresHarry.forEach(sectorHarry => {
     let option = document.createElement("option");
     option.value = sectorHarry.precio;
-    option.innerHTML = `${sectorHarry.nombre} $ ${sectorHarry.precio} + s/ch`;
+    option.text = sectorHarry.nombre;
 
     sectoresH.appendChild(option);
 
@@ -49,6 +49,7 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
      const dia = document.getElementById('fechaHarry').value;
      const precio = document.getElementById('sectoresH').value;
      const cant = document.getElementById('cantidad').value;
+     var sector = $('#sectoresH option:selected').text();
 
      let stock = 4;
      let costodeservicio = 0.07;
@@ -60,7 +61,7 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
      t.innerHTML = `<h2 class="text-center"> TU PEDIDO:</h2>
      <h3 class="text-center">CANTIDAD: ${cant} TOTAL:<strong> $ ${totalCs}</strong> (service charge ya incluído)</h3>
      <h4 class="text-center">UBICACIÓN: Estadio River Plate, DÍA: <strong>${dia}</strong></h4>
-     <br>
+     <h3 class="text-center">SECTOR:<strong>${sector}</strong></h3>
      <div class="col-lg-12 text-center">
      <button id="btn_comprar" class="btn">COMPRAR</button>
      <button id="btn_cancelar" class="btn">CANCELAR PEDIDO</button>
@@ -99,9 +100,7 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
 
       let nombreIngresado = document.getElementById('name').value;
 
-      totalCompra.push({dia, cant, totalCs, nombreIngresado});
-
-      console.log (`Stock por compra sobrante: ${stockTotal}`);
+      totalCompra.push({dia, cant, totalCs, sector, nombreIngresado});
 
       const enJSON = JSON.stringify(totalCompra);
 
