@@ -42,13 +42,24 @@ form.addEventListener('submit', (e) => {
     'success'
   )
 
-   form.reset();
-
    const enJSON = JSON.stringify(inconveniente);
 
    localStorage.setItem('inconveniente', enJSON);
 
    const miInconveniente = JSON.parse(localStorage.getItem('inconveniente'));
+
+   fetch("https://formsubmit.co/ajax/camilavaliante_6@hotmail.com",{
+    method: "POST",
+    body: new FormData(e.target),
+  })
+  .then(res => res.ok ? res.json() : Promise.reject(res))
+  .then(json => {
+    form.reset();
+  })
+  .catch (err => {
+    console.log(err);
+  })
+  ;
 
 })
 

@@ -57,11 +57,13 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
      let totalCs = total + total * costodeservicio;
      let stockTotal = stock - cant;
 
+     totalCompra.push({dia, cant, totalCs, sector});
+
       const t = document.getElementById('total');
      t.innerHTML = `<h2 class="text-center"> TU PEDIDO:</h2>
      <h3 class="text-center">CANTIDAD: ${cant} TOTAL:<strong> $ ${totalCs}</strong> (service charge ya incluído)</h3>
      <h4 class="text-center">UBICACIÓN: Estadio River Plate, DÍA: <strong>${dia}</strong></h4>
-     <h3 class="text-center">SECTOR:<strong>${sector}</strong></h3>
+     <h3 class="text-center">SECTOR: <strong>${sector}</strong></h3>
      <div class="col-lg-12 text-center">
      <button id="btn_comprar" class="btn">COMPRAR</button>
      <button id="btn_cancelar" class="btn">CANCELAR PEDIDO</button>
@@ -74,39 +76,62 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
      function comprar(){
 
       Swal.fire({
-        title: 'Inicia sesión',
-        html: `<p>Una vez que inicies sesión, se te redirigirá al sector de pago</p>
+        html: `<legend>Pago</legend>
+        <h5> SECTOR: ${sector}</h5>
+        <h5> CANTIDAD DE ENTRADAS: ${cant}</h5>
         <input type="text" id="name" class="form-control" placeholder="Nombre y apellido">
         <br>
-        <input type="email" class="form-control" placeholder="E-mail" id="email">
+        <input type="number" id="number" class="form-control" placeholder="Número de tarjeta">
         <br>
-        <input type="password" id="password" class="form-control" placeholder="Contraseña">
-        <p>Si no estás registrado hace click <a href="../registro.html"> ACÁ </a>`,
+        <input type="password" id="security" class="form-control" placeholder="CVV">
+        <br>
+        <input type="date" id="date" class="form-control" placeholder="Fecha de expiración">
+        <br>
+        <input type="email" id="email" class="form-control" placeholder="E-mail">
+        <h4> TOTAL A PAGAR: <strong>$${totalCs}</strong></h4>
+        `,
         confirmButtonText: 'Aceptar',
         showCancelButton: true,
         cancelButtonText: 'Cancelar',
         focusConfirm: true,
         preConfirm: () => {
           let nombre = Swal.getPopup().querySelector('#name').value
-          let login = Swal.getPopup().querySelector('#email').value
-          let password = Swal.getPopup().querySelector('#password').value
-          if (!login || !password || !nombre) {
+          let numero = Swal.getPopup().querySelector('#number').value
+          let codigo = Swal.getPopup().querySelector('#security').value
+          let fecha = Swal.getPopup().querySelector('#date').value
+          let email = Swal.getPopup().querySelector('#email').value
+          if (!nombre || !numero || !codigo || !fecha || !email) {
             Swal.showValidationMessage(`Por favor ingrese TODOS los datos pedidos`)
           }
         }
       }).then((result) => {
         if (result.isConfirmed) {
-      window.location.href="../sectorpago.html";
-
-      let nombreIngresado = document.getElementById('name').value;
-
-      totalCompra.push({dia, cant, totalCs, sector, nombreIngresado});
 
       const enJSON = JSON.stringify(totalCompra);
 
       localStorage.setItem('totalCompra', enJSON);
 
       const miPedido = JSON.parse(localStorage.getItem('totalCompra'));
+
+      Swal.fire(
+        'Felicitaciones, ya tenes tus entradas',
+        'Vas a recibir los e-tickets por e-mail en un plazo de 24 hs',
+        'success'
+      )
+
+      fetch("https://formsubmit.co/ajax/camilavaliante_6@hotmail.com",{
+        method: "POST",
+        body: new FormData(e.target),
+      })
+      .then(res => res.ok ? res.json() : Promise.reject(res))
+      .then(json => {
+        window.location.href="../index.html";
+      })
+      .catch (err => {
+        console.log(err);
+      })
+      ;
+
     }
     })
 

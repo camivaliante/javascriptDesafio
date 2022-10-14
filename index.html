@@ -36,9 +36,6 @@
 						<a href="#page-top"></a>
 					</li>
 					<li>
-						<a class="page-scroll" href="./misentradas.html">MIS ENTRADAS</a>
-					</li>
-					<li>
 						<a class="page-scroll" href="#contacto">¿TUVISTE ALGÚN INCONVENIENTE CON TU COMPRA?</a>
 					</li>
 				</ul>
@@ -76,18 +73,18 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-12 text-center">
-						<form id="form">
+						<form id="form" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Nombre y apellido*"
+										<input type="text" class="form-control" name= "nombre" placeholder="Nombre y apellido*"
 											id="nombre" data-validation-required-message="Por favor, ingresá un nombre"
 											required>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="email" class="form-control" placeholder="E-mail *" id="email"
+										<input type="email" class="form-control" name= "email" placeholder="E-mail *" id="email"
 											required>
 									</div>
 								</div>
@@ -95,7 +92,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-										<textarea class="form-control"
+										<textarea class="form-control" name= "mensaje"
 											placeholder="Contanos tu inconveniente detallando NÚMERO DE COMPRA y ARTISTA *"
 											id="mensaje" required
 											data-validation-required-message="Por favor, contanos tu inconveniente"></textarea>
