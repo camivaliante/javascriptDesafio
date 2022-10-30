@@ -48,16 +48,38 @@
 
         <section>
             <div class="container">
-                <div class="row" id="comprar-tickets-harry">
+                <div class="row" id="comprar-tickets-coldplay">
                     <div class="col-lg-12 text-center">
                         <h1>¡COLDPLAY EN ARGENTINA!</h1>
                         <h3>ESTADIO RIVER PLATE</h3>
-                        <h4>25, 26, 28 y 29 DE OCTUBRE DE 2022</h4>
+                        <h5>25, 26, 28, 29 DE OCTUBRE DE 2022</h5>
+                        <h5>1, 2, 4, 5, 7 y 8 DE NOVIEMBRE DE 2022</h5>
                         <p>______________</p>
                         <img src="../assets/images/mapaColdplay.png" alt="">
                         <h4>¡Máximo 4 entradas por usuario!</h4>
                     </div>
+                    <form id="form-coldplay" method="post">
+                        <div class="form-group container col-lg-12">
+                            <br>
+                            <select class="form-control" name="fecha" id="fechaColdplay" required>
+                                <option value="" selected="true" disabled="disabled">DÍA</option>
+                            </select>
+                            <br>
+                            <select class="form-control" name="precio por sector" id="sectoresC" required>
+                                <option value="" selected="true" disabled="disabled">SECTOR</option>
+                            </select>
+                            <br>
+                            <select class="form-control" name="cantidad" id="cantidad" required>
+                                <option value="" selected="true" disabled="disabled">CANTIDAD</option>
+                            </select>
+                            <br>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" id="btn_seleccionar" class="btn">SELECCIONAR PEDIDO</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+                <div id="total"></div>
             </div>
         </section>
 
@@ -73,7 +95,7 @@
         </div>
     </footer>
 
-    <script src="../entradas.js"></script>
+    <script src="../entradas/entradas-coldplay.js" type="module"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/SmoothScroll.js"></script>

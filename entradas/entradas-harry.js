@@ -1,4 +1,4 @@
-import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
+import { cantidad, fechasHarry, sectoresHarry } from "../artistas.js";
 
 // FECHA SELECT OPTION
   const fechasH = document.getElementById("fechaHarry");
@@ -38,7 +38,7 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
 
 // COMPRAR
 
-  let totalCompra = [];
+  let totalCompraHarry = [];
 
   const formharry = document.getElementById('form-harry');
 
@@ -57,7 +57,7 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
      let totalCs = total + total * costodeservicio;
      let stockTotal = stock - cant;
 
-     totalCompra.push({dia, cant, totalCs, sector});
+     totalCompraHarry.push({dia, cant, totalCs, sector});
 
       const t = document.getElementById('total');
      t.innerHTML = `<h2 class="text-center"> TU PEDIDO:</h2>
@@ -107,11 +107,11 @@ import { cantidad, fechasHarry, sectoresHarry } from "./artistas.js";
       }).then((result) => {
         if (result.isConfirmed) {
 
-      const enJSON = JSON.stringify(totalCompra);
+      const enJSON = JSON.stringify(totalCompraHarry);
 
-      localStorage.setItem('totalCompra', enJSON);
+      localStorage.setItem('totalCompraHarry', enJSON);
 
-      const miPedido = JSON.parse(localStorage.getItem('totalCompra'));
+      const miPedidoHarry = JSON.parse(localStorage.getItem('totalCompraHarry'));
 
       Swal.fire(
         'Felicitaciones, ya tenes tus entradas',

@@ -57,6 +57,28 @@
                         <img src="../assets/images/mapaDua.png" alt="">
                         <h4>¡Máximo 4 entradas por usuario!</h4>
                     </div>
+                    <form id="form-dua" method="post">
+                        <div class="form-group container col-lg-12">
+                            <br>
+                            <select class="form-control" name="fecha" id="fechaDua" required>
+                                <option value="" selected="true" disabled="disabled">DÍA</option>
+                            </select>
+                            <br>
+                            <select class="form-control" name="precio por sector" id="sectoresD" required>
+                                <option value="" selected="true" disabled="disabled">SECTOR</option>
+                            </select>
+                            <br>
+                            <select class="form-control" name="cantidad" id="cantidad" required>
+                                <option value="" selected="true" disabled="disabled">CANTIDAD</option>
+                            </select>
+                            <br>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" id="btn_seleccionar" class="btn">SELECCIONAR PEDIDO</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="total"></div>
                 </div>
             </div>
         </section>
@@ -72,7 +94,7 @@
         </div>
     </footer>
 
-    <script src="../entradas.js"></script>
+    <script src="../entradas/entradas-dua.js" type="module"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/SmoothScroll.js"></script>
