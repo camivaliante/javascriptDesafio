@@ -57,7 +57,28 @@
                         <img src="../assets/images/mapaImagineDragons.png" alt="">
                         <h4>¡Máximo 4 entradas por usuario!</h4>
                     </div>
+                    <form id="form-imagine" method="post">
+                        <div class="form-group container col-lg-12">
+                            <br>
+                            <select class="form-control" name="fecha" id="fechaImagine" required>
+                                <option value="" selected="true" disabled="disabled">DÍA</option>
+                            </select>
+                            <br>
+                            <select class="form-control" name="precio por sector" id="sectoresID" required>
+                                <option value="" selected="true" disabled="disabled">SECTOR</option>
+                            </select>
+                            <br>
+                            <select class="form-control" name="cantidad" id="cantidad" required>
+                                <option value="" selected="true" disabled="disabled">CANTIDAD</option>
+                            </select>
+                            <br>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" id="btn_seleccionar" class="btn">SELECCIONAR PEDIDO</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+                <div id="total"></div>
             </div>
         </section>
 
@@ -73,7 +94,7 @@
         </div>
     </footer>
 
-    <script src="../entradas.js"></script>
+    <script src="../entradas/entradas-imagine.js" type="module"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/SmoothScroll.js"></script>

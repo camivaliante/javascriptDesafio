@@ -1,26 +1,26 @@
-import { cantidad, fechasDua, sectoresDua } from "../artistas.js";
+import { cantidad, fechasImagine, sectoresImagine } from "../artistas.js";
 
 // FECHA SELECT OPTION
-  const fechasD = document.getElementById("fechaDua");
+  const fechasID = document.getElementById("fechaImagine");
 
-  fechasDua.forEach(fechaDua => {
+  fechasImagine.forEach(fechaImagine => {
     const option = document.createElement("option");
-    option.value = fechaDua.dia;
-    option.innerHTML = fechaDua.dia;
+    option.value = fechaImagine.dia;
+    option.innerHTML = fechaImagine.dia;
 
-    fechasD.appendChild(option);
+    fechasID.appendChild(option);
 
   })
 
 // SECTOR SELECT OPTION
-  const sectoresD = document.getElementById("sectoresD");
+  const sectoresID = document.getElementById("sectoresID");
 
-  sectoresDua.forEach(sectorDua => {
+  sectoresImagine.forEach(sectorImagine => {
     let option = document.createElement("option");
-    option.value = sectorDua.precio;
-    option.text = sectorDua.nombre;
+    option.value = sectorImagine.precio;
+    option.text = sectorImagine.nombre;
 
-    sectoresD.appendChild(option);
+    sectoresID.appendChild(option);
 
   })
 
@@ -38,25 +38,25 @@ import { cantidad, fechasDua, sectoresDua } from "../artistas.js";
 
 // COMPRAR
 
-  let totalCompraDua= [];
+  let totalCompraImagine = [];
 
-  const formcoldplay = document.getElementById('form-dua');
+  const formimagine = document.getElementById('form-imagine');
 
-  formcoldplay.addEventListener('submit', (e) => {
+  formimagine.addEventListener('submit', (e) => {
 
      e.preventDefault();
 
-     const dia = document.getElementById('fechaDua').value;
-     const precio = document.getElementById('sectoresD').value;
+     const dia = document.getElementById('fechaImagine').value;
+     const precio = document.getElementById('sectoresID').value;
      const cant = document.getElementById('cantidad').value;
-     var sector = $('#sectoresD option:selected').text();
+     var sector = $('#sectoresID option:selected').text();
 
      let stock = 4;
      let costodeservicio = 0.07;
      let total = precio * cant;
      let totalCs = total + total * costodeservicio;
 
-     totalCompraDua.push({dia, cant, totalCs, sector});
+     totalCompraImagine.push({dia, cant, totalCs, sector});
 
       const t = document.getElementById('total');
      t.innerHTML = `<h2 class="text-center"> TU PEDIDO:</h2>
@@ -106,11 +106,11 @@ import { cantidad, fechasDua, sectoresDua } from "../artistas.js";
       }).then((result) => {
         if (result.isConfirmed) {
 
-      const enJSON = JSON.stringify(totalCompraDua);
+      const enJSON = JSON.stringify(totalCompraImagine);
 
-      localStorage.setItem('totalCompraDua', enJSON);
+      localStorage.setItem('totalCompraImagine', enJSON);
 
-      const miPedidoDua = JSON.parse(localStorage.getItem('totalCompraDua'));
+      const miPedidoImagine = JSON.parse(localStorage.getItem('totalCompraImagine'));
 
       Swal.fire(
         'Felicitaciones, ya tenes tus entradas',

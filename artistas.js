@@ -82,19 +82,19 @@ const fechasDua = [
 ]
 
 const sectoresDua= [
-  { nombre: "CAMPO DELANTERO", precio: 12000 },
-  { nombre: "CAMPO GENERAL", precio: 8000 },
+  { nombre: "CAMPO DELANTERO", precio: 14500 },
+  { nombre: "CAMPO GENERAL", precio: 9500 },
 ];
 
+//  IMAGINE DRAGONS
 
+const fechasImagine = [
+  {dia: "23 de octubre de 2022"},
+]
 
+const sectoresImagine= [
+  { nombre: "CAMPO DELANTERO", precio: 16000 },
+  { nombre: "CAMPO GENERAL", precio: 9500 },
+];
 
-
-
-
-
-
-
-
-
-export {artistas, fechasHarry, sectoresHarry, cantidad, fechasColdplay, sectoresColdplay, sectoresDua, fechasDua};
+export {artistas, fechasHarry, sectoresHarry, cantidad, fechasColdplay, sectoresColdplay, sectoresDua, fechasDua, sectoresImagine, fechasImagine};
